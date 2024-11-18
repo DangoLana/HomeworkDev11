@@ -10,17 +10,11 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
-import java.util.logging.Logger;
 
 @WebServlet("/time")
 public class TimeServlet extends HttpServlet {
-
-    private static final Logger logger = Logger.getLogger(TimeServlet.class.getName());
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String timezone = request.getParameter("timezone");
-
-        logger.info("Received timezone parameter: " + timezone);
 
         if (timezone == null) {
             Cookie[] cookies = request.getCookies();
@@ -42,11 +36,7 @@ public class TimeServlet extends HttpServlet {
             timezone = timezone.replace("UTC", "GMT");
         }
 
-        logger.info("Processed timezone: " + timezone);
-
         TimeZone timeZone = TimeZone.getTimeZone(timezone);
-
-        logger.info("Resolved TimeZone: " + timeZone.getID());
 
         if (timeZone.getID().equals("GMT")) {
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
@@ -55,7 +45,7 @@ public class TimeServlet extends HttpServlet {
         }
 
         Cookie timezoneCookie = new Cookie("lastTimezone", timezone);
-        timezoneCookie.setMaxAge(60 * 60 * 24 * 30); // Термін дії cookie - 30 днів
+        timezoneCookie.setMaxAge(60 * 60 * 24 * 30);
         response.addCookie(timezoneCookie);
 
         long currentTimeMillis = System.currentTimeMillis();

@@ -87,9 +87,6 @@
       <option name="catalinaBase" value="C:\Users\simbr\.SmartTomcat\HomeworkDev1010\HomeworkDev1010.main" />
       <option name="contextPath" value="/" />
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
-      <option name="envOptions">
-        <map />
-      </option>
       <option name="extraClassPath" value="" />
       <option name="tomcatInfo">
         <TomcatInfo>
