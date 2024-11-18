@@ -28,8 +28,8 @@ public class TimezoneValidateFilter implements Filter {
 
         if (timezone != null) {
             TimeZone timeZone = TimeZone.getTimeZone(timezone);
-                if (timeZone.getID().equals("GMT")) {
-                ((HttpServletResponse) response).setStatus(HttpServletResponse.SC_BAD_REQUEST); // HTTP код 400
+            if (timeZone.getID().equals("GMT")) {
+                ((HttpServletResponse) response).setStatus(HttpServletResponse.SC_BAD_REQUEST);
                 response.getWriter().write("<html><body><h1>Invalid timezone</h1></body></html>");
                 return;
             }

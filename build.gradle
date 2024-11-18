@@ -15,6 +15,10 @@ dependencies {
     implementation 'org.junit.jupiter:junit-jupiter'
     // https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api
     implementation group: 'jakarta.servlet', name: 'jakarta.servlet-api', version: '6.1.0'
+    // https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf
+    implementation group: 'org.thymeleaf', name: 'thymeleaf', version: '3.1.2.RELEASE'
+
+
 
 }
 
