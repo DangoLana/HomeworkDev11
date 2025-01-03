@@ -3,6 +3,7 @@ package org.example;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 
+
 public class ThymeleafConfig {
     private static final TemplateEngine templateEngine;
 
